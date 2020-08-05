@@ -5,6 +5,9 @@ import router from './router'
 import store from './store'
 import messagePlugin from '@/utils/message.plugin'
 import dateFilter from '@/filters/date.filter'
+import currencyFilter from '@/filters/currency.filter'
+
+import Loader from '@/components/Loader'
 import firebase from 'firebase/app';
 import 'firebase/database';
 import 'firebase/auth';
@@ -17,6 +20,9 @@ Vue.config.productionTip = false
 Vue.use(messagePlugin)
 Vue.use(Vuelidate)
 Vue.filter('date', dateFilter)
+Vue.filter('currency', currencyFilter)
+
+Vue.component('Loader', Loader)
 
 // Initialize Firebase
 firebase.initializeApp({
